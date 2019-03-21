@@ -1,0 +1,19 @@
+$tk-bc: rgb(164, 132, 93);
+@mixin card($width, $height, $radius){
+	width: $width;
+	height: $height;
+	border-radius: $radius;
+	background-color: #fff;
+	color: $tk-bc;
+	// box-shadow: rgba(0, 0, 0, .2) 0 -0.05rem .1rem;
+	& div{
+		color: inherit;
+	}
+}
+
+// 设置行高和字体居中
+@mixin font-center($height){
+	line-height: $height;
+	height: $height;
+	text-align: center;
+}

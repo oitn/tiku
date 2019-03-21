@@ -1,0 +1,112 @@
+$test-color: #2aa52e;
+$tt-color: #26c5fe;
+$bc: #e4e4e4;
+$fc:#fff;
+$theme-color: #459df5;
+$border-color: #cccccc;
+$font-color: #515151;
+$theme-red: #e14a63;
+$theme-green: #4fc08d;
+$place-holder: #C7C7CD;
+//$font-color: #cccccc;
+
+@mixin header-color{
+	background: linear-gradient(left, #26c5fe 0%, $theme-color 100%);
+	background: -webkit-gradient(linear, left top, right top, from(#26c5fe), to($theme-color));
+}
+
+// 背景图片地址和大小
+@mixin bis($url) {
+	background-image: url($url);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+@mixin borderRadius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+//定位全屏
+@mixin allcover{
+	position:absolute;
+	top:0;
+	right:0;
+}
+
+//定位上下左右居中
+@mixin center {
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//定位上下居中
+@mixin ct {
+	position: absolute;
+	top: 50%;
+    transform: translateY(-50%);
+}
+
+//定位上下居中
+@mixin cl {
+	position: absolute;
+	left: 50%;
+    transform: translateX(-50%);
+}
+
+//宽高
+@mixin wh($width, $height){
+	width: $width;
+	height: $height;
+}
+
+//字体大小、行高、字体
+@mixin font($size, $line-height, $family: 'Microsoft YaHei') {
+	font: #{$size}/#{$line-height} $family;
+}
+
+//字体大小，颜色
+@mixin sc($size, $color){
+	font-size: $size;
+	color: $color;
+}
+
+//flex 布局和 子元素 对其方式
+@mixin fj($type: space-between){
+	display: flex;
+	justify-content: $type;
+}
+
+// flex开头 解决不同浏览器
+@mixin flexWebkit {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex
+}
+
+// placeholder样式
+@mixin ph {
+  ::-moz-placeholder{color: $place-holder;}                   //ff
+  ::-webkit-input-placeholder{color: $place-holder;}     //chrome,safari
+  :-ms-input-placeholder{color: $place-holder;}             //ie10
+}
+
+// 渐变背景
+@mixin bc ($colorA, $colorB){
+  background: -webkit-linear-gradient($colorA, $colorB); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient($colorA, $colorB); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient($colorA, $colorB); /* Firefox 3.6 - 15 */
+  background: linear-gradient($colorA, $colorB); /* 标准的语法 */
+}
+
+@mixin card {
+	overflow: hidden;
+	border-radius: .1rem;
+	border: .03rem solid rgba(0,0,0,.14);
+	box-shadow: 0 .04rem 3px .001rem rgba(0,0,0,.1);
+}
