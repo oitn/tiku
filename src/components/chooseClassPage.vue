@@ -164,8 +164,7 @@
     right: 0;
     height: 18rem;
     background-color: #c07a4c;
-		
-			text-align: center;
+		text-align: center;
   }
 	
 html, body,
