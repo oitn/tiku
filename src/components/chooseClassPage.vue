@@ -94,7 +94,7 @@
   .wrapper {
     height: 100%;
     overflow: hidden;
-
+			
   }
 
 /*  .header {
@@ -104,68 +104,68 @@
     left: 0;
     right: 0;
   } */
-	.header{
-		background-color: $tk-bc;
-		position: relative;
-		height: 3.5rem;
-		line-height: 3.5rem;
-		.left{
-			position: absolute;
-			color: #fff;
-			left: 0;
-			font-weight: bold;
+.header{
+			background-color: $tk-bc;
+			position: relative;
+			height: 3.5rem;
+			line-height: 3.5rem;
+			.left{
+				position: absolute;
+				color: #fff;
+				left: 0;
+				font-weight: bold;
+			}
+			.title{
+				@include cl;
+				color: #fff;
+			}
+			.right{
+				position: absolute;
+				color: #fff;
+				right: 0;
+				font-weight: bold;
+			}
 		}
-		.title{
-			@include cl;
-			color: #fff;
-		}
-		.right{
-			position: absolute;
-			color: #fff;
-			right: 0;
-			font-weight: bold;
-		}
-	}
-
-  .content {
-    position: absolute;
-    top: 6rem;
-    width: 93%;
-    margin-left: 3.5%;
-  }
-
-  .classTag {
-    /*margin-top: 1rem;*/
-  }
-
-  .classTag2 {
 		
+		.content {
+		  position: absolute;
+		  top: 6rem;
+		  width: 93%;
+		  margin-left: 3.5%;
+		}
+		
+		.classTag {
+		  /*margin-top: 1rem;*/
+		}
+		
+		.classTag2 {
+			
+				text-align: center;
+		  /*border-radius: .3rem .3rem;*/
+		  border-top-left-radius: .5rem;
+		  border-top-right-radius: .5rem;
+		  -moz-box-shadow: 0px -10px 18px rgba(67, 64, 69, 0.46);
+		  -webkit-box-shadow: 0px -10px 18px rgba(67, 64, 69, 0.46);
+		  box-shadow: 0px -10px 18px rgba(67, 64, 69, 0.46);
+		  background-color: #3487ff;
+		  height: 2.8rem;
+		}
+		
+		.className {
+		  font-size: 1.3rem;
+		  left: 15%;
+		
+		}
+		
+		.footer {
+		  position: absolute;
+		  left: 0;
+		  bottom: 0;
+		  right: 0;
+		  height: 18rem;
+		  background-color: #c07a4c;
 			text-align: center;
-    /*border-radius: .3rem .3rem;*/
-    border-top-left-radius: .5rem;
-    border-top-right-radius: .5rem;
-    -moz-box-shadow: 0px -10px 18px rgba(67, 64, 69, 0.46);
-    -webkit-box-shadow: 0px -10px 18px rgba(67, 64, 69, 0.46);
-    box-shadow: 0px -10px 18px rgba(67, 64, 69, 0.46);
-    background-color: #3487ff;
-    height: 2.8rem;
-  }
-
-  .className {
-    font-size: 1.3rem;
-    left: 15%;
-
-  }
-
-  .footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 18rem;
-    background-color: #c07a4c;
-		text-align: center;
-  }
+		}
 	
 html, body,
 div, span, applet, object, iframe,

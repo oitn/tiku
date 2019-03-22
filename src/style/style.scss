@@ -6,7 +6,7 @@ $tk-radius: 1.3rem;
 	border-radius: $radius;
 	background-color: #fff;
 	color: $tk-bc;
-	// box-shadow: rgba(0, 0, 0, .2) 0 -0.05rem .1rem;
+	box-shadow: rgba(0, 0, 0, .3) 0 -0.15rem .5rem;
 	& div{
 		color: inherit;
 	}

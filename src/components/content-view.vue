@@ -25,26 +25,28 @@
 <style lang = 'scss'>
 	@import "../style/style.scss";
 	@import "../style/mixin.scss";
-	.header{
-		background-color: $tk-bc;
-		position: relative;
-		height: 3.5rem;
-		line-height: 3.5rem;
-		.left{
-			position: absolute;
-			color: #fff;
-			left: 0;
-			font-weight: bold;
-		}
-		.title{
-			@include cl;
-			color: #fff;
-		}
-		.right{
-			position: absolute;
-			color: #fff;
-			right: 0;
-			font-weight: bold;
+	.view{
+		.header{
+			background-color: $tk-bc;
+			position: relative;
+			height: 3.5rem;
+			line-height: 3.5rem;
+			.left{
+				position: absolute;
+				color: #fff;
+				left: 0;
+				font-weight: bold;
+			}
+			.title{
+				@include cl;
+				color: #fff;
+			}
+			.right{
+				position: absolute;
+				color: #fff;
+				right: 0;
+				font-weight: bold;
+			}
 		}
 	}
 	.view{

@@ -88,6 +88,7 @@
 				line-height: 9rem;
 				@include center;
 				border: .5rem $tk-bc solid;
+				box-shadow: none;
 			}
 		}
 		.bar{
@@ -96,17 +97,16 @@
 				padding: 0 1.6rem;
 				box-sizing: border-box;
 				display: flex;
+				height: 100%;
 				align-items: center;
 				justify-content: space-between;
-				margin-top: .6rem;
 				.time{
+					line-height: 1.6em;
 					div:first-child{
 						font-size: 1.1em;
-						line-height: 1.7em;
 					}
 					div:last-child{
 						font-size: .8em;
-						line-height: 1.6em;
 					}
 					display: inline-block;
 				}

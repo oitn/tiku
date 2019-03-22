@@ -24,16 +24,16 @@
 	@import "../../style/style.scss";
 	.bar{
 		position: relative;
-		@include card(100%, 100%, .6rem);
-		.right{
+		@include card(100%, 100%, $tk-radius);
+		&>.right{
 			position: absolute;
 			background-color: rgb(227, 227, 227);
 			top: 0;
 			bottom: 0;
 			right: 0;
-			border-radius: 0 .6rem .6rem 0;
+			border-radius: 0 $tk-radius $tk-radius 0;
 		}
-		.slot{
+		&>.slot{
 			position: absolute;
 			top: 0;
 			bottom: 0;

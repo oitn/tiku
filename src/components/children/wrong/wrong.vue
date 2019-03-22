@@ -1,8 +1,11 @@
 <template>
 	<div class='wrong'>
 		<div v-for='(chapter, num) in chapter'>
-			<div class='title'>第{{chapter.num}}章：{{chapter.title}}</div>
-			<div class='question' v-for='(question) in chapter.questions'>
+			<div class='title'>
+				<div>第{{chapter.num}}章</div>
+				<div>{{chapter.title}}</div>
+			</div>
+			<div class='question' v-for='(question) in chapter.questions' :key='question.question'>
 				<tk-question 
 					:type='question.type' 
 					ifStar='true' 
@@ -26,6 +29,9 @@
 		},
 		data() {
 			return {
+				
+				chapterShow:[],
+				
 				chapter:[
 					{
 						num: 1,
@@ -109,6 +115,18 @@
 		.title{
 			@include card(95vw, 10rem, $tk-radius);
 			margin: .3rem 2.5vw;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding: 2rem;
+			box-sizing: border-box;
+			line-height: 2.2em;
+			div:first-child{
+				
+			}
+			div:last-child{
+				font-size: .8em;
+			}
 		}
 		.question{
 			margin: .3rem 2.5vw;
