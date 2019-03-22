@@ -104,9 +104,9 @@ $place-holder: #C7C7CD;
   background: linear-gradient($colorA, $colorB); /* 标准的语法 */
 }
 
-@mixin card {
-	overflow: hidden;
-	border-radius: .1rem;
-	border: .03rem solid rgba(0,0,0,.14);
-	box-shadow: 0 .04rem 3px .001rem rgba(0,0,0,.1);
-}
+// @mixin card {
+// 	overflow: hidden;
+// 	border-radius: .1rem;
+// 	border: .03rem solid rgba(0,0,0,.14);
+// 	box-shadow: 0 .04rem 3px .001rem rgba(0,0,0,.1);
+// }

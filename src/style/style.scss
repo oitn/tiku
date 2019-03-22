@@ -1,4 +1,5 @@
 $tk-bc: rgb(164, 132, 93);
+$tk-radius: 1.3rem;
 @mixin card($width, $height, $radius){
 	width: $width;
 	height: $height;
@@ -16,4 +17,10 @@ $tk-bc: rgb(164, 132, 93);
 	line-height: $height;
 	height: $height;
 	text-align: center;
+}
+
+// flex一行元素对齐
+@mixin flex-line{
+	display: flex;
+	align-items: center;
 }

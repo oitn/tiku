@@ -19,11 +19,15 @@
 	@import "style/mixin";
 	@import "style/style.scss";
 	.question{
-		font-size: 1.3rem;
+		font-size: 1.2rem;
 		.content{
 			width: 100vw;
 			min-height: 100vh;
 			position: relative;
 		}
+	}
+	*::-webkit-scrollbar
+	{
+	  display: none;
 	}
 </style>
