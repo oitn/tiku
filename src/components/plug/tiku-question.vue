@@ -52,7 +52,8 @@
 				answer: disable时提供正确答案，格式同旧版题库
 			事件监听
 				@offStar,@onStar: 小星星状态改变
-				@change: 用户改变答案，返回的参数和answer一样，参考/exam/paper
+				@change: 用户改变答案，返回的参数和answer一样
+			使用参考wrong和exam/paper，不保证不会出bug
 		*/
 		
 		props:['type', 'ifShowStar', 'ifStar', 'index', 'question', 'onChoose', 'disable', 'option', 'answer', 'identify'],
