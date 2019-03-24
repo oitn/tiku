@@ -26,8 +26,8 @@
 			position: relative;
 		}
 	}
-	*::-webkit-scrollbar
+/* 	*::-webkit-scrollbar
 	{
 	  display: none;
-	}
+	} */
 </style>

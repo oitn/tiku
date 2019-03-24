@@ -1,19 +1,22 @@
 <template>
 	<div class='wrong'>
-		<div v-for='(chapter, num) in chapter'>
+		<div v-for='(unit, num1) in data'>
 			<div class='title'>
 				<div>第{{chapter.num}}章</div>
 				<div>{{chapter.title}}</div>
 			</div>
-			<div class='question' v-for='(question) in chapter.questions' :key='question.question'>
+			<div class='question' v-for='(item, num2) in unit' :key='item.ID' v-show='item.ID%18===0'>
 				<tk-question 
-					:type='question.type' 
-					ifStar='true' 
-					:index='question.index'
-					:question='question.question'
-					:onChoose='question.answer' 
-					disable='true' 
-					:option='question.option'
+					:identify="item.ID"
+					:type='item.Mode' 
+					:ifShowStar='true' 
+					:ifStar='true'
+					:index='item.ID'
+					:question='item.QuestionStr'
+					:disable='true' 
+					:answer='item.Answer'
+					:option='[item.ChoosenA, item.ChoosenB, item.ChoosenC, item.ChoosenD]'
+					@offStar="remove(num1, num2)"
 				>
 				</tk-question>
 			</div>
@@ -22,6 +25,7 @@
 </template>
 
 <script>
+	import {getText} from '../../../axios/api.js'
 	import Question from '../../plug/tiku-question.vue'
 	export default {
 		components:{
@@ -31,6 +35,8 @@
 			return {
 				
 				chapterShow:[],
+				
+				data:[],
 				
 				chapter:[
 					{
@@ -47,25 +53,19 @@
 									'人生态度',
 									'人生信仰'
 								],
-								answer: [1]
+								answer: [2]
 							},
 							{
 								type: 'checkbox',
 								index: 100,
 								question: '下列哪些选项内容代表了拜金主义的人生观',
 								option:[
-									'人生价值',
-									'人生目的',
-									'人生态度',
-									'人生信仰'
+									'人生的价值',
+									'人生的目的',
+									'人生的态度',
+									'人生的信仰'
 								],
 								answer: [0, 1]
-							},
-							{
-								type: 'judeg',
-								index: 150,
-								question: '人的生命过程只是一个自然过程',
-								answer: false
 							},
 						]
 					},
@@ -76,34 +76,60 @@
 							{
 								type: 'radio',
 								index: 1,
-								question: '人生观的核心是()',
+								question: '人生观的核心是什么()',
 								option:[
 									'人生价值',
 									'人生目的',
 									'人生态度',
 									'人生信仰'
-								]
+								],
+								answer:[3]
 							},
 							{
 								type: 'checkbox',
 								index: 100,
-								question: '下列哪些选项内容代表了拜金主义的人生观',
+								question: '下列哪些选项内容代表了拜金主义的人生观()',
 								option:[
 									'人生价值',
 									'人生目的',
 									'人生态度',
 									'人生信仰'
-								]
+								],
+								answer:[1, 2]
 							},
 							{
-								type: 'judeg',
+								type: 'judge',
 								index: 150,
-								question: '人的生命过程只是一个自然过程'
+								question: '人的生命过程只是一个自然过程吗',
+								answer:false
 							},
 						]
 					}
 				]
 			};
+		},
+		methods:{
+			output(str){
+				console.log(str);
+			},
+			remove(num1, num2){
+				this.chapter[num1].questions.splice(num2, 1);
+				alert("错题已经移除")
+			}
+		},
+		mounted(){
+			getText(0, 0).then(
+				(res)=>{
+					console.log(res.data);
+					this.data.push(res.data);
+				}
+			);
+			getText(0, 1).then(
+				(res)=>{
+					console.log(res.data);
+					this.data.push(res.data);
+				}
+			)
 		}
 	}
 </script>
