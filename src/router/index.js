@@ -12,7 +12,8 @@ import answerSheet from '../components/children/exam/answerSheet.vue'
 
 import precision from '../components/children/precision/precision.vue'
 import workBook from '../components/children/precision/workBook.vue'
-import quick from '../components/children/quick/quick.vue'
+import quick from '../components/children/precision/quick.vue'
+
 import search from '../components/children/search/search.vue'
 import wrong from '../components/children/wrong/wrong.vue'
 Vue.use(Router)
@@ -24,7 +25,7 @@ export default new Router({
 		  name:'bookshelf',
 		  component:bookshelf,
 		},
-		
+
 		{
 		  path:'/:subject',
 		  name:'view',
@@ -84,7 +85,7 @@ export default new Router({
 				}
 			]
 		},
-		
+
 		]
 
 })

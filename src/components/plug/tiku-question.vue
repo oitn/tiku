@@ -4,26 +4,26 @@
 		<div class='q-option' v-for='(item, i) in tempOption'>
 			<div class='q-checkbox' v-if='currentType==="checkbox"'>
 				<input
-					
+
 					type='checkbox'
-					:id="identify+'-'+i" 
-					:name='question' 
-					:value="check[i]" 
-					class='checkbox' 
-					:disabled="disable" 
+					:id="identify+'-'+i"
+					:name='question'
+					:value="check[i]"
+					class='checkbox'
+					:disabled="disable"
 					v-model="currentAnswer[i]"
 				>
 				<label :for="identify+'-'+i"><div class='q-dot'></div></label>
 			</div>
 			<div class='q-checkbox' v-if='currentType!=="checkbox"'>
 				<input
-					
+
 					type='radio'
-					:id="identify+'-'+i" 
-					:name='question' 
-					:value="check[i]" 
-					class='checkbox' 
-					:disabled="disable" 
+					:id="identify+'-'+i"
+					:name='question'
+					:value="check[i]"
+					class='checkbox'
+					:disabled="disable"
 					v-model="currentAnswer"
 				>
 				<label :for="identify+'-'+i"><div class='q-dot'></div></label>
@@ -55,7 +55,7 @@
 				@change: 用户改变答案，返回的参数和answer一样
 			使用参考wrong和exam/paper，不保证不会出bug
 		*/
-		
+
 		props:['type', 'ifShowStar', 'ifStar', 'index', 'question', 'onChoose', 'disable', 'option', 'answer', 'identify'],
 		data() {
 			return {
@@ -68,7 +68,7 @@
 		watch:{
 			currentAnswer:function(){
 				let res;
-				console.log("return:"+this.currentAnswer)
+				// console.log("return:"+this.currentAnswer)
 				if(this.type==='sig'){
 					res=this.currentAnswer
 				}else if(this.type==='mul'){
@@ -85,7 +85,7 @@
 						res = '否'
 					}
 				}
-				console.log(res);
+				// console.log(res);
 				this.$emit('change', res);
 			}
 		},
@@ -97,7 +97,7 @@
 				this.$emit('onStar')
 			},
 			emitAnswer(){
-				
+
 			}
 		},
 		mounted(){
@@ -115,7 +115,7 @@
 				for(let i = 0; i < this.option.length; i ++){
 					this.currentAnswer.push(false)
 				}
-				console.log(this.answer)
+				// console.log(this.answer)
 				if(this.answer){
 					if(this.answer.indexOf('A') !== -1){
 						this.currentAnswer[0] = true;
@@ -126,7 +126,7 @@
 					}if(this.answer.indexOf('D') !== -1){
 						this.currentAnswer[3] = true;
 					}
-					console.log(this.currentAnswer)
+					// console.log(this.currentAnswer)
 				}
 			}else{
 				this.tempOption = ['是', '否']
@@ -184,8 +184,8 @@
 			}
 		}
 	}
-	
-	
+
+
 	/* 单选 */
 	input[type="radio"] {
 		position: absolute;
@@ -234,6 +234,6 @@
 		  background-color: #A4845D;
 	  }
 	}
-		
-	
+
+
 </style>

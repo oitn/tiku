@@ -6,14 +6,14 @@
 				<div>{{chapter.title}}</div>
 			</div>
 			<div class='question' v-for='(item, num2) in unit' :key='item.ID' v-show='item.ID%18===0'>
-				<tk-question 
+				<tk-question
 					:identify="item.ID"
-					:type='item.Mode' 
-					:ifShowStar='true' 
+					:type='item.Mode'
+					:ifShowStar='true'
 					:ifStar='true'
 					:index='item.ID'
 					:question='item.QuestionStr'
-					:disable='true' 
+					:disable='true'
 					:answer='item.Answer'
 					:option='[item.ChoosenA, item.ChoosenB, item.ChoosenC, item.ChoosenD]'
 					@offStar="remove(num1, num2)"
@@ -33,11 +33,11 @@
 		},
 		data() {
 			return {
-				
+
 				chapterShow:[],
-				
+
 				data:[],
-				
+
 				chapter:[
 					{
 						num: 1,
@@ -148,7 +148,7 @@
 			box-sizing: border-box;
 			line-height: 2.2em;
 			div:first-child{
-				
+
 			}
 			div:last-child{
 				font-size: .8em;

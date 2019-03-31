@@ -2,8 +2,8 @@
 	<div class='func'>
 		<div class='container'>
 			<div class='line'>
-				<div class='item' @click="gotoAdress('quick')">快速背题</div>
-				<div class='item' @click="gotoAdress('precision')">精准背题</div>
+				<div class='item' @click="routerHaveParams('quick')">快速背题</div>
+				<div class='item' @click="routerHaveParams('workBook')">精准背题</div>
 			</div>
 			<div class='line'>
 				<div class='item' @click="gotoAdress('exam')">模拟考试</div>
@@ -37,8 +37,17 @@
 		methods:{
 			gotoAdress(aim){
 				this.$router.push('/'+this.$route.params.subject+'/'+aim)
-			}
-		}
+			},
+      //2=>1=>2
+      routerHaveParams(aim) {
+        localStorage.setItem('useType',aim);
+        this.$router.push({
+          name: `precision`,
+
+        })
+      }
+
+    }
 	}
 </script>
 
@@ -81,7 +90,7 @@
 					}
 				}
 			}
-			
+
 			.circle{
 				@include card(9rem, 9rem, 100%);
 				text-align: center;
@@ -116,8 +125,8 @@
 				}
 			}
 		}
-		
+
 	}
-	
-	
+
+
 </style>

@@ -94,7 +94,7 @@
   .wrapper {
     height: 100%;
     overflow: hidden;
-			
+
   }
 
 /*  .header {
@@ -126,21 +126,26 @@
 				font-weight: bold;
 			}
 		}
-		
+
 		.content {
-		  position: absolute;
+		  position: fixed;
 		  top: 6rem;
 		  width: 93%;
 		  margin-left: 3.5%;
+      .content div:nth-child(1) {background-color: rgb(210, 177, 24)}
+      .content div:nth-child(2) {background-color: #69a794}
+      .content div:nth-child(3) {background-color: #806300}
+      .content div:nth-child(4) {background-color: #71361d}
+      .content div:nth-child(5) {background-color: #f1908c}
+      .content div:nth-child(6) {background-color: #644800}
+      .content div:nth-child(7) {background-color: #695e45}
+      .content div:nth-child(8) {background-color: #6e820b}
+      .content div:nth-child(9) {background-color: #248067}
 		}
-		
-		.classTag {
-		  /*margin-top: 1rem;*/
-		}
-		
+
+
 		.classTag2 {
-			
-				text-align: center;
+      text-align: center;
 		  /*border-radius: .3rem .3rem;*/
 		  border-top-left-radius: .5rem;
 		  border-top-right-radius: .5rem;
@@ -150,39 +155,23 @@
 		  background-color: #3487ff;
 		  height: 2.8rem;
 		}
-		
+
 		.className {
 		  font-size: 1.3rem;
 		  left: 15%;
-		
+      margin: 2rem;
+
 		}
-		
+
 		.footer {
 		  position: absolute;
 		  left: 0;
 		  bottom: 0;
 		  right: 0;
-		  height: 18rem;
-		  background-color: #c07a4c;
+		  height: 17.8rem;
+		  background-color: #a4845d;
 			text-align: center;
 		}
-	
-html, body,
-div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, a, abbr, acronym, address,
-big, cite, code, del, dfn, em, font, img,
-ins, kbd, q, s, samp, small, strike, strong,
-sub, sup, tt, var, b, u, i, center, dl, dt,
-dd, ol, ul, li, fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td, p {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  /*background: transparent;*/
-}
+
 
 </style>

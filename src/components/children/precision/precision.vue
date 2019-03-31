@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div v-for="(course,index) in classes" class=" sectionBox"  @click="goWorkBook(index+1)">
-        <div class="courseName">{{course.course}}</div>
-        <div class="courseIntroduce">{{course.text}}</div>
+    <div v-for="(course,index) in classes" class=" sectionBox" @click="chooseRouter(index+1)">
+      <div class="courseName">{{course.course}}</div>
+      <div class="courseIntroduce">{{course.text}}</div>
     </div>
     <div class="courseFooter">
       到底了
@@ -14,6 +14,7 @@
   export default {
     data() {
       return {
+        classesIndex:"",
         classes: [
           {course: '第一章', text: '人生青春之问'},
           {course: '第二章', text: '坚定理想信念'},
@@ -24,10 +25,19 @@
       };
     },
     methods: {
-      goWorkBook(classNumber) {
-        console.log(classNumber);
-        this.$router.push({path: '/precision/workBook'});
-      }
+
+      //判断路由方向 快速背题  精准背题
+      chooseRouter(index) {
+        console.log(  '第'+index+'章');
+        const useType = localStorage.getItem('useType');
+        console.log(useType);
+        this.$router.push({
+          path: '/precision/' + useType,
+          query: {
+            classIndex: index
+          }
+        })
+      },
 
       //进度条
 
@@ -52,14 +62,15 @@
       position: absolute;
       margin: 3rem 2.5rem;
       font-size: 1.25rem;
-    }.courseIntroduce{
-           position: absolute;
-           font-size: 1rem;
-           margin: 6rem 2.5rem;
-         }
+    }
+    .courseIntroduce {
+      position: absolute;
+      font-size: 1rem;
+      margin: 6rem 2.5rem;
+    }
   }
 
-  .courseFooter{
+  .courseFooter {
 
     margin-top: 2rem;
     text-align: center;
